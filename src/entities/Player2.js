@@ -10,7 +10,7 @@ export class Player2 extends Phaser.Physics.Arcade.Sprite {
   
       this.setCollideWorldBounds(true);
       this.setOrigin(0, 0);
-      this.setScale(2);
+      this.setScale(4);
       this.play('idle2');
   
       this.WASD = this.scene.input.keyboard.addKeys('W,A,S,D');
@@ -49,13 +49,13 @@ export class Player2 extends Phaser.Physics.Arcade.Sprite {
   
       if (!this.isHurt) {
         if (this.WASD.A.isDown && !this.isAttacking) {
-          this.setVelocityX(-200);
+          this.setVelocityX(-500);
           if (isOnFloor) {
             this.play('run2', true);
           }
           this.flipX = true;
         } else if (this.WASD.D.isDown && !this.isAttacking) {
-          this.setVelocityX(200);
+          this.setVelocityX(500);
           if (isOnFloor) {
             this.play('run2', true);
           }
